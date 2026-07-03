@@ -1,0 +1,12 @@
+/* Highlight form lines by default instead of on hover */
+.o_form_view .o_cell > .o_field_widget {
+    border-bottom: 1px solid #ccc !important;
+}
+
+.o_form_view .o_cell > .o_field_widget.o_field_many2many_tags {
+    border-bottom: none !important;
+}
+
+.o_form_view .o_cell > .o_field_widget.o_field_many2many_tags > .o_field_tags {
+    border-bottom: 1px solid #ccc !important;
+}

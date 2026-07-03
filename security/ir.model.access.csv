@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_management_product,management.product,model_management_product,base.group_user,1,1,1,1
+access_management_job,management.job,model_management_job,base.group_user,1,1,1,1
+access_management_marketing,management.marketing,model_management_marketing,base.group_user,1,1,1,1
+access_management_sales_performance,management.sales_performance,model_management_sales_performance,base.group_user,1,1,1,1
+access_management_activity_type,management.activity_type,model_management_activity_type,base.group_user,1,1,1,1
+access_management_activity_performance,management.activity_performance,model_management_activity_performance,base.group_user,1,1,1,1
+access_management_helpdesk,management.helpdesk,model_management_helpdesk,base.group_user,1,1,1,1
+access_management_client_followup,management.client_followup,model_management_client_followup,base.group_user,1,1,1,1

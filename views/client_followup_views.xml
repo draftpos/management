@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_management_client_followup_tree" model="ir.ui.view">
+        <field name="name">management.client.followup.tree</field>
+        <field name="model">management.client.followup</field>
+        <field name="arch" type="xml">
+            <list string="Client Follow Up">
+                <field name="customer_id"/>
+                <field name="sales_rep_id"/>
+                <field name="technician_id"/>
+                <field name="date_job_done"/>
+                <field name="using_system_status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_management_client_followup_search" model="ir.ui.view">
+        <field name="name">management.client.followup.search</field>
+        <field name="model">management.client.followup</field>
+        <field name="arch" type="xml">
+            <search string="Client Follow Up">
+                <field name="customer_id"/>
+                <field name="sales_rep_id"/>
+                <field name="technician_id"/>
+                <field name="date_job_done"/>
+                <field name="using_system_status"/>
+                <field name="sales_invoices_done_now"/>
+                <field name="scheduled_issues"/>
+                <group name="group_by">
+                    <filter string="Customer" name="group_by_customer" context="{'group_by':'customer_id'}"/>
+                    <filter string="Sales Rep" name="group_by_sales_rep" context="{'group_by':'sales_rep_id'}"/>
+                    <filter string="Technician" name="group_by_technician" context="{'group_by':'technician_id'}"/>
+                    <filter string="Status" name="group_by_status" context="{'group_by':'using_system_status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="view_management_client_followup_form" model="ir.ui.view">
+        <field name="name">management.client.followup.form</field>
+        <field name="model">management.client.followup</field>
+        <field name="arch" type="xml">
+            <form string="Client Follow Up">
+                <sheet>
+                    <group>
+                        <group string="Primary Info">
+                            <field name="customer_id"/>
+                            <field name="sales_rep_id"/>
+                            <field name="technician_id"/>
+                            <field name="date_job_done"/>
+                        </group>
+                        <group string="Status &amp; Issues">
+                            <field name="using_system_status"/>
+                            <field name="sales_invoices_done_now"/>
+                            <field name="scheduled_issues"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_management_client_followup" model="ir.actions.act_window">
+        <field name="name">Client Follow Ups</field>
+        <field name="res_model">management.client.followup</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_management_client_followup_action"
+              name="Client Follow Up"
+              parent="management_app_menu_root"
+              action="action_management_client_followup"
+              sequence="60"/>
+</odoo>

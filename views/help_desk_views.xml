@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_management_helpdesk_tree" model="ir.ui.view">
+        <field name="name">management.helpdesk.tree</field>
+        <field name="model">management.helpdesk</field>
+        <field name="arch" type="xml">
+            <list string="Help Desk">
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="sales_rep_id"/>
+                <field name="technician_id"/>
+                <field name="issue_type"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_management_helpdesk_search" model="ir.ui.view">
+        <field name="name">management.helpdesk.search</field>
+        <field name="model">management.helpdesk</field>
+        <field name="arch" type="xml">
+            <search string="Help Desk Ticket">
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="phone"/>
+                <field name="sales_rep_id"/>
+                <field name="issue_type"/>
+                <field name="product_id"/>
+                <field name="technician_id"/>
+                <field name="status"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+                <group name="group_by">
+                    <filter string="Customer" name="group_by_customer" context="{'group_by':'customer_id'}"/>
+                    <filter string="Sales Rep" name="group_by_sales_rep" context="{'group_by':'sales_rep_id'}"/>
+                    <filter string="Technician" name="group_by_technician" context="{'group_by':'technician_id'}"/>
+                    <filter string="Status" name="group_by_status" context="{'group_by':'status'}"/>
+                    <filter string="Issue Type" name="group_by_issue_type" context="{'group_by':'issue_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="view_management_helpdesk_form" model="ir.ui.view">
+        <field name="name">management.helpdesk.form</field>
+        <field name="model">management.helpdesk</field>
+        <field name="arch" type="xml">
+            <form string="Help Desk Ticket">
+                <header>
+                    <field name="status" widget="statusbar" statusbar_visible="not_assigned,in_progress,done,overdue"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Customer Details">
+                            <field name="customer_id"/>
+                            <field name="phone"/>
+                            <field name="sales_rep_id"/>
+                        </group>
+                        <group string="Issue Info">
+                            <field name="issue_type"/>
+                            <field name="product_id"/>
+                            <field name="technician_id"/>
+                        </group>
+                        <group string="Time Tracking">
+                            <field name="time_to_be_taken" widget="float_time"/>
+                            <field name="start_time"/>
+                            <field name="end_time"/>
+                            <field name="time_taken_to_resolve" widget="float_time"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_management_helpdesk" model="ir.actions.act_window">
+        <field name="name">Help Desk</field>
+        <field name="res_model">management.helpdesk</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_management_helpdesk_action"
+              name="Help Desk"
+              parent="management_app_menu_root"
+              action="action_management_helpdesk"
+              sequence="50"/>
+</odoo>

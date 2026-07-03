@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <record id="activity_type_calls" model="management.activity.type">
+            <field name="name">Calls</field>
+            <field name="code">cold_calls</field>
+        </record>
+
+        <record id="activity_type_todo" model="management.activity.type">
+            <field name="name">To do</field>
+            <field name="code">other</field>
+        </record>
+
+        <record id="activity_type_door_to_door" model="management.activity.type">
+            <field name="name">Door to door</field>
+            <field name="code">door_to_door</field>
+        </record>
+
+        <record id="activity_type_site_visit" model="management.activity.type">
+            <field name="name">Site Visit</field>
+            <field name="code">other</field>
+        </record>
+
+        <record id="activity_type_client_demo" model="management.activity.type">
+            <field name="name">Client Demo</field>
+            <field name="code">other</field>
+        </record>
+
+    </data>
+</odoo>

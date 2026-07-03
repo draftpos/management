@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_management_marketing_tree" model="ir.ui.view">
+        <field name="name">management.marketing.tree</field>
+        <field name="model">management.marketing</field>
+        <field name="arch" type="xml">
+            <list string="Marketing">
+                <field name="name"/>
+                <field name="sales_rep_id"/>
+                <field name="product_id"/>
+                <field name="campaign"/>
+                <field name="expected_leads"/>
+                <field name="actual_leads"/>
+                <field name="date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_management_marketing_search" model="ir.ui.view">
+        <field name="name">management.marketing.search</field>
+        <field name="model">management.marketing</field>
+        <field name="arch" type="xml">
+            <search string="Marketing">
+                <field name="name"/>
+                <field name="campaign"/>
+                <field name="product_id"/>
+                <field name="sales_rep_id"/>
+                <field name="expected_leads"/>
+                <field name="actual_leads"/>
+                <field name="lost_leads"/>
+                <field name="cost_per_lead"/>
+                <field name="date"/>
+                <field name="day_of_week"/>
+                <group name="group_by">
+                    <filter string="Campaign" name="group_by_campaign" context="{'group_by':'campaign'}"/>
+                    <filter string="Product" name="group_by_product" context="{'group_by':'product_id'}"/>
+                    <filter string="Sales Rep" name="group_by_sales_rep" context="{'group_by':'sales_rep_id'}"/>
+                    <filter string="Date" name="group_by_date" context="{'group_by':'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_management_marketing_form" model="ir.ui.view">
+        <field name="name">management.marketing.form</field>
+        <field name="model">management.marketing</field>
+        <field name="arch" type="xml">
+            <form string="Marketing">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Ad Name..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Campaign Details">
+                            <field name="campaign"/>
+                            <field name="product_id"/>
+                            <field name="sales_rep_id"/>
+                            <field name="date"/>
+                            <field name="day_of_week"/>
+                        </group>
+                        <group string="Lead Metrics">
+                            <field name="expected_leads"/>
+                            <field name="actual_leads"/>
+                            <field name="lost_leads"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="cost_per_lead" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_management_marketing" model="ir.actions.act_window">
+        <field name="name">Marketing</field>
+        <field name="res_model">management.marketing</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_management_marketing"
+              name="Marketing"
+              parent="management_app_menu_root"
+              action="action_management_marketing"
+              sequence="20"/>
+</odoo>

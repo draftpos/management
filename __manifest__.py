@@ -1,0 +1,30 @@
+{
+    'name': 'Management',
+    'version': '1.0',
+    'summary': 'Business Management Application',
+    'description': 'A comprehensive management app for Jobs, Marketing, Sales, Activities, Help Desk, and Client Follow Up.',
+    'category': 'Management',
+    'author': 'Antigravity',
+    'depends': ['base', 'mail'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/ir_sequence_data.xml',
+        'data/activity_type_data.xml',
+        'views/menus.xml',
+        'views/res_config_settings_views.xml',
+        'views/product_views.xml',
+        'views/job_views.xml',
+        'views/marketing_views.xml',
+        'views/sales_performance_views.xml',
+        'views/activity_performance_views.xml',
+        'views/help_desk_views.xml',
+        'views/client_followup_views.xml',
+    ],
+    'assets': {
+        'web.assets_backend': [
+            'management_app/static/src/css/form_highlight.css',
+        ],
+    },
+    'installable': True,
+    'application': True,
+}

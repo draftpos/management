@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="management_app_menu_root"
+              name="Management"
+              sequence="10"/>
+
+    <!-- Sub Menus -->
+    <menuitem id="management_menu_configuration"
+              name="Configuration"
+              parent="management_app_menu_root"
+              sequence="100"/>
+</odoo>
