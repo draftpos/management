@@ -14,6 +14,14 @@ class ManagementProduct(models.Model):
                 vals['item_code'] = self.env['ir.sequence'].next_by_code('management.product') or 'New'
         return super().create(vals_list)
 
+    @api.depends('item_code', 'name')
+    def _compute_display_name(self):
+        for record in self:
+            if record.item_code and record.name:
+                record.display_name = f"[{record.item_code}] {record.name}"
+            else:
+                record.display_name = record.name or record.item_code or ''
+
     def name_get(self):
         result = []
         for record in self:

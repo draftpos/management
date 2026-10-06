@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//form" position="inside">
-                <app data-string="Management App" string="Management App" name="management_app" groups="base.group_system">
+                <app data-string="Management App" string="Management App" name="management" groups="base.group_system">
                     <block title="Marketing Configuration" name="marketing_config">
                         <setting id="management_expected_leads" help="Set the default expected leads for new marketing campaigns.">
                             <field name="management_default_expected_leads"/>
@@ -23,7 +23,7 @@
         <field name="res_model">res.config.settings</field>
         <field name="view_mode">form</field>
         <field name="target">current</field>
-        <field name="context">{'module' : 'management_app', 'bin_size': False}</field>
+        <field name="context">{'module' : 'management', 'bin_size': False}</field>
     </record>
 
     <menuitem id="management_menu_configuration_settings"

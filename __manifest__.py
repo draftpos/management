@@ -1,6 +1,6 @@
 {
     'name': 'Management',
-    'version': '1.0',
+    'version': '19.0.1.1',
     'summary': 'Business Management Application',
     'description': 'A comprehensive management app for Jobs, Marketing, Sales, Activities, Help Desk, and Client Follow Up.',
     'category': 'Management',
@@ -22,7 +22,7 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'management_app/static/src/css/form_highlight.css',
+            'management/static/src/css/form_highlight.css',
         ],
     },
     'installable': True,
