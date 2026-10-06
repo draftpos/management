@@ -3,7 +3,8 @@
     <!-- Main Menu -->
     <menuitem id="management_app_menu_root"
               name="Management"
-              sequence="10"/>
+              sequence="10"
+              web_icon="management,static/description/icon.png"/>
 
     <!-- Sub Menus -->
     <menuitem id="management_menu_configuration"
