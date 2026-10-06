@@ -1,6 +1,6 @@
 {
     'name': 'Management',
-    'version': '19.0.1.1',
+    'version': '19.0.1.2',
     'summary': 'Business Management Application',
     'description': 'A comprehensive management app for Jobs, Marketing, Sales, Activities, Help Desk, and Client Follow Up.',
     'category': 'Management',
