@@ -4,7 +4,10 @@
     'summary': 'Business Management Application',
     'description': 'A comprehensive management app for Jobs, Marketing, Sales, Activities, Help Desk, and Client Follow Up.',
     'category': 'Management',
-    'author': 'Antigravity',
+    'author': 'DraftPOS / Havano Solutions',
+    'website': 'https://draftpos.com',
+    'license': 'LGPL-3',
+    'images': ['static/description/icon.png'],
     'depends': ['base', 'mail'],
     'data': [
         'security/ir.model.access.csv',
